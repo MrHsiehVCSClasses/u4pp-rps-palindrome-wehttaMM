@@ -40,18 +40,23 @@ public class RockPaperScissors {
 	public static void play(Scanner sc) {
 		while (sc.hasNext()) {
 			String userInput = sc.nextLine();
+			// to lower
 			String userInputLowerCase = userInput.toLowerCase();
+			// if r p  s then userChoice
 			if ("r".equals(userInputLowerCase) || "p".equals(userInputLowerCase) || "s".equals(userInputLowerCase)) {
 				userChoice = userInputLowerCase;
 				computerChoice = getRandomChoice();
 			}
-			if ("a".equals(userInputLowerCase)) {
+			// if a or any then getRandomChoice
+			if ("a".equals(userInputLowerCase)||"any".equals(userInputLowerCase)) {
 				userChoice = getRandomChoice();
 				computerChoice = getRandomChoice();
 			}
+			// if y compare
 			if ("y".equals(userInputLowerCase)) {
 				results(userChoice, computerChoice);
 			}
+			// if n then over
 			if ("n".equals(userInputLowerCase)) {
 				System.out.println("Thank You for Playing");
 				break;
